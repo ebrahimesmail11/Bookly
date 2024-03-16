@@ -23,7 +23,7 @@ final BookModel bookModel;
         height: 125,
         child: Row(
           children: [
-            CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,),
+            CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??"",),
             const SizedBox(
               width: 30,
             ),
@@ -46,7 +46,7 @@ final BookModel bookModel;
                     height: 3,
                   ),
                    Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors?[0]?? bookModel.volumeInfo.authors![2],
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
@@ -62,7 +62,7 @@ final BookModel bookModel;
                           ),
                         ),
                         const Spacer(),
-                         BookRating(rating: bookModel.volumeInfo.averageRating?? 0,
+                         BookRating(rating: bookModel.volumeInfo.averageRating?.round()?? 0,
                          count: bookModel.volumeInfo.ratingsCount?? 0,
                          ),
                       ],
