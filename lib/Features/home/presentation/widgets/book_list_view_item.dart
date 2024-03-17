@@ -5,6 +5,7 @@ import 'package:bookly/core/Function/custom_navigate.dart';
 import 'package:bookly/core/routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 
 import '../../../../constant.dart';
@@ -17,7 +18,7 @@ final BookModel bookModel;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        customPushReplacement(context, path: AppRouter.kDetailseView);
+        GoRouter.of(context).pushReplacement( AppRouter.kDetailseView,extra: bookModel);
       },
       child: SizedBox(
         height: 125,
