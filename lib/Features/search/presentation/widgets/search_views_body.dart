@@ -1,5 +1,6 @@
 
 import 'package:bookly/Features/search/presentation/widgets/custom_search_text_field.dart';
+import 'package:bookly/Features/search/presentation/widgets/search_result_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -36,21 +37,3 @@ class SearchViewsBody extends StatelessWidget {
   }
 }
 
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          // child: BookListViewItem(),
-          child: Text("data"),
-        );
-      },
-      itemCount: 10,
-    );
-  }
-}

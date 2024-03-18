@@ -46,7 +46,7 @@ final BookModel bookModel;
                     height: 3,
                   ),
                    Text(
-                    bookModel.volumeInfo.authors?[0]?? bookModel.volumeInfo.authors![2],
+                    bookModel.volumeInfo.authors?[0]??bookModel.volumeInfo.authors![1],
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
